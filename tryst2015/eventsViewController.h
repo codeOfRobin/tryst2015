@@ -13,5 +13,8 @@
 @property (nonatomic,strong) AsyncImageView *image;
 @property (nonatomic,strong) UIScrollView *scroll;
 @property (nonatomic,strong) UITableView *eventTable;
-@property (nonatomic,strong) NSMutableArray *events;
+@property (nonatomic,strong) NSMutableArray *quizEvents;
+@property (nonatomic,strong) NSMutableArray *workshopEvents;
+@property (nonatomic,strong) NSMutableArray *lectureEvents;
+@property (nonatomic,strong) UISegmentedControl *segmentCategory;
 @end

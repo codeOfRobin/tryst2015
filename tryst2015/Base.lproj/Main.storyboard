@@ -9,7 +9,7 @@
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -33,6 +33,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HlJ-ik-Tvp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vn5-LV-0rv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -50,6 +51,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bXo-4p-hVY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R8d-wA-fcN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -65,6 +67,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="08R-4S-Gkp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="CLC-Su-QqI"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBf-eR-2FJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
