@@ -276,8 +276,9 @@
         return TRUE;
     }]];
     cell.leftExpansion.fillOnTrigger = YES;
+    cell.leftSwipeSettings.transition = MGSwipeTransitionDrag;
     cell.leftExpansion.buttonIndex=0;
-    cell.leftSwipeSettings.transition = MGSwipeTransition3D;
+
     return cell;
 }
 
