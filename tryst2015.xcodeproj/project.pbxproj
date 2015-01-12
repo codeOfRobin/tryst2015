@@ -34,6 +34,7 @@
 		7AF187741A64241D0097ACED /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187731A64241D0097ACED /* Social.framework */; };
 		7AF187761A6424270097ACED /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187751A6424270097ACED /* Accounts.framework */; };
 		7AF187781A64242D0097ACED /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187771A64242D0097ACED /* AdSupport.framework */; };
+		7AF1877B1A6474F70097ACED /* eventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		7AF187731A64241D0097ACED /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7AF187751A6424270097ACED /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7AF187771A64242D0097ACED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		7AF187791A6474F70097ACED /* eventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventDetailsViewController.h; sourceTree = "<group>"; };
+		7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventDetailsViewController.m; sourceTree = "<group>"; };
 		8093302051296EB9D4E42C91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +173,8 @@
 				7AF1870E1A62EE980097ACED /* AppDelegate.h */,
 				7AF1870F1A62EE980097ACED /* AppDelegate.m */,
 				7AF187171A62EE980097ACED /* Main.storyboard */,
+				7AF187791A6474F70097ACED /* eventDetailsViewController.h */,
+				7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */,
 				7AF187331A63D6840097ACED /* eventsViewController.h */,
 				7AF187341A63D6840097ACED /* eventsViewController.m */,
 				7AF187361A63D87E0097ACED /* Podfile */,
@@ -373,6 +378,7 @@
 				7AF187351A63D6840097ACED /* eventsViewController.m in Sources */,
 				7AF1870D1A62EE980097ACED /* main.m in Sources */,
 				7AF1873B1A63DA1B0097ACED /* AsyncImageView.m in Sources */,
+				7AF1877B1A6474F70097ACED /* eventDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

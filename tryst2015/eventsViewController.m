@@ -19,6 +19,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.segmentCategory=[[UISegmentedControl alloc]initWithItems:@[@"QUIZZES",@"WORKSHOPS",@"LECTURES"]];
+    [self.segmentCategory setCenter:CGPointMake(self.navigationController.navigationBar.center.x, self.navigationController.navigationBar.frame.size.height/2)];
+    [self.navigationController.navigationBar addSubview:self.segmentCategory];
+    [self.segmentCategory addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventAllEvents];
+    self.segmentCategory.selectedSegmentIndex = 0;
+    
+
 }
 - (BOOL) isConnectionAvailable
 {
@@ -59,13 +66,7 @@
     self.eventTable.delegate=self;
     self.eventTable.dataSource=self;
     
-    self.segmentCategory=[[UISegmentedControl alloc]initWithItems:@[@"QUIZZES",@"WORKSHOPS",@"LECTURES"]];
-    [self.segmentCategory setCenter:CGPointMake(self.navigationController.navigationBar.center.x, self.navigationController.navigationBar.frame.size.height/2)];
-    [self.navigationController.navigationBar addSubview:self.segmentCategory];
-    [self.segmentCategory addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventAllEvents];
-    self.segmentCategory.selectedSegmentIndex = 0;
-
-    [self.view addSubview:self.eventTable];
+        [self.view addSubview:self.eventTable];
     // Do any additional setup after loading the view.
     
     
@@ -263,6 +264,11 @@
     else if (self.segmentCategory.selectedSegmentIndex==2)
     {
         cell.textLabel.text=[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
+        
+        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterFullStyle];
+        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 500, 100)];
+        label.text=x;
+        [cell.contentView addSubview:label];
     }
     cell.imageView.image=[UIImage imageNamed:@"Home"];
     cell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"favorite" backgroundColor:[UIColor grayColor] callback:^BOOL(MGSwipeTableCell *sender) {
@@ -275,5 +281,9 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+ 
+}
 
 @end
