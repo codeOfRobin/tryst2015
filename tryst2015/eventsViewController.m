@@ -11,6 +11,7 @@
 #import <MGSwipeTableCell/MGSwipeTableCell.h>
 #import <MGSwipeButton.h>
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "EventCell.h"
 #define TABLEVIEW_FIX 200
 @interface eventsViewController ()
 @end
@@ -62,10 +63,11 @@
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     
     self.eventTable=[[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.image.frame),CGRectGetWidth(self.view.frame),1000)];
-    [self.eventTable registerClass:[MGSwipeTableCell class] forCellReuseIdentifier:@"cell"];
+    [self.eventTable registerClass:[EventCell class] forCellReuseIdentifier:@"cell"];
     self.eventTable.delegate=self;
     self.eventTable.dataSource=self;
-    
+    self.eventTable.separatorStyle=UITableViewCellSeparatorStyleNone;
+    self.eventTable.backgroundColor=[UIColor blackColor];
         [self.view addSubview:self.eventTable];
     // Do any additional setup after loading the view.
     
@@ -248,43 +250,50 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MGSwipeTableCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
-    if (!cell)
+    EventCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
+    if (cell==nil)
     {
-        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[EventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    
+    [cell setNeedsLayout];
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
         cell.textLabel.text=[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
+        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        [cell.subtitleLabel setText:x];
     }
     else if (self.segmentCategory.selectedSegmentIndex==1)
     {
         cell.textLabel.text=[[self.workshopEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
+        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.workshopEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        [cell.subtitleLabel setText:x];
     }
     else if (self.segmentCategory.selectedSegmentIndex==2)
     {
         cell.textLabel.text=[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
         
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterFullStyle];
-        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 500, 100)];
-        label.text=x;
-        [cell.contentView addSubview:label];
+        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        [cell.subtitleLabel setText:x];
     }
-    cell.imageView.image=[UIImage imageNamed:@"Home"];
+    
     cell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"favorite" backgroundColor:[UIColor grayColor] callback:^BOOL(MGSwipeTableCell *sender) {
         NSLog(@"asdhjkfn");
         return TRUE;
     }]];
+    [cell.cellImage setImage:[UIImage imageNamed:@"Home"]];
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     cell.leftExpansion.fillOnTrigger = YES;
     cell.leftSwipeSettings.transition = MGSwipeTransitionDrag;
     cell.leftExpansion.buttonIndex=0;
-
+    cell.contentView.backgroundColor=[UIColor blackColor];
+    cell.backgroundColor=[UIColor blackColor];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
- 
+
 }
 
 @end
