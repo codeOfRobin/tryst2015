@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C4A0D078A18F6B9C4AD12E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C1AD85EF86CEE49F24D470 /* libPods.a */; };
 		7A6CFA921A6587840067E89D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CFA911A6587840067E89D /* EventCell.m */; };
+		7AE726511A69A00F0002A383 /* Arduino.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE726501A69A00F0002A383 /* Arduino.png */; };
 		7AF1870D1A62EE980097ACED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870C1A62EE980097ACED /* main.m */; };
 		7AF187101A62EE980097ACED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870F1A62EE980097ACED /* AppDelegate.m */; };
 		7AF187191A62EE980097ACED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF187171A62EE980097ACED /* Main.storyboard */; };
@@ -35,7 +36,6 @@
 		7AF187741A64241D0097ACED /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187731A64241D0097ACED /* Social.framework */; };
 		7AF187761A6424270097ACED /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187751A6424270097ACED /* Accounts.framework */; };
 		7AF187781A64242D0097ACED /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF187771A64242D0097ACED /* AdSupport.framework */; };
-		7AF1877B1A6474F70097ACED /* eventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */; };
 		7AF9F3DA1A65BE360003AF37 /* detailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF9F3D91A65BE360003AF37 /* detailsView.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,7 @@
 		250DAEB2A49F0A185DEB19EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A6CFA901A6587840067E89D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		7A6CFA911A6587840067E89D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		7AE726501A69A00F0002A383 /* Arduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arduino.png; sourceTree = "<group>"; };
 		7AF187071A62EE980097ACED /* tryst2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryst2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF1870B1A62EE980097ACED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AF1870C1A62EE980097ACED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,8 +88,6 @@
 		7AF187731A64241D0097ACED /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7AF187751A6424270097ACED /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		7AF187771A64242D0097ACED /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		7AF187791A6474F70097ACED /* eventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eventDetailsViewController.h; sourceTree = "<group>"; };
-		7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = eventDetailsViewController.m; sourceTree = "<group>"; };
 		7AF9F3D81A65BE360003AF37 /* detailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailsView.h; sourceTree = "<group>"; };
 		7AF9F3D91A65BE360003AF37 /* detailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailsView.m; sourceTree = "<group>"; };
 		8093302051296EB9D4E42C91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,13 +173,12 @@
 		7AF187091A62EE980097ACED /* tryst2015 */ = {
 			isa = PBXGroup;
 			children = (
+				7AE726501A69A00F0002A383 /* Arduino.png */,
 				7AF187711A6423660097ACED /* Home.png */,
 				7AF187381A63DA1B0097ACED /* AsyncImageView */,
 				7AF1870E1A62EE980097ACED /* AppDelegate.h */,
 				7AF1870F1A62EE980097ACED /* AppDelegate.m */,
 				7AF187171A62EE980097ACED /* Main.storyboard */,
-				7AF187791A6474F70097ACED /* eventDetailsViewController.h */,
-				7AF1877A1A6474F70097ACED /* eventDetailsViewController.m */,
 				7AF187331A63D6840097ACED /* eventsViewController.h */,
 				7AF187341A63D6840097ACED /* eventsViewController.m */,
 				7AF9F3D81A65BE360003AF37 /* detailsView.h */,
@@ -330,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF187191A62EE980097ACED /* Main.storyboard in Resources */,
+				7AE726511A69A00F0002A383 /* Arduino.png in Resources */,
 				7AF1871E1A62EE980097ACED /* LaunchScreen.xib in Resources */,
 				7AF187721A6423660097ACED /* Home.png in Resources */,
 				7AF187371A63D87E0097ACED /* Podfile in Resources */,
@@ -390,7 +389,6 @@
 				7AF1873B1A63DA1B0097ACED /* AsyncImageView.m in Sources */,
 				7A6CFA921A6587840067E89D /* EventCell.m in Sources */,
 				7AF9F3DA1A65BE360003AF37 /* detailsView.m in Sources */,
-				7AF1877B1A6474F70097ACED /* eventDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

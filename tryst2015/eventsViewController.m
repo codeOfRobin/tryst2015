@@ -12,6 +12,7 @@
 #import <MGSwipeButton.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "EventCell.h"
+#import "detailsView.h"
 #define TABLEVIEW_FIX 200
 @interface eventsViewController ()
 @end
@@ -28,21 +29,15 @@
     
 
 }
-- (BOOL) isConnectionAvailable
+- (BOOL)isConnectionAvailable
 {
-    SCNetworkReachabilityFlags flags;
-    BOOL receivedFlags;
+    NSURL *url=[NSURL URLWithString:@"http://www.google.com"];
+    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"HEAD"];
+    NSHTTPURLResponse *response;
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
     
-    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(CFAllocatorGetDefault(), [@"http://www.google.com" UTF8String]);
-    receivedFlags = SCNetworkReachabilityGetFlags(reachability, &flags);
-    CFRelease(reachability);
-    
-    if (!receivedFlags || (flags == 0) )
-    {
-        return FALSE;
-    } else {
-        return TRUE;
-    }
+    return ([response statusCode]==200)?YES:NO;
 }
 
 - (void)viewDidLoad {
@@ -56,10 +51,12 @@
     [scroll setBounces:YES];
     self.image=[[AsyncImageView alloc] initWithFrame:CGRectMake(0, -TABLEVIEW_FIX, CGRectGetWidth(self.view.frame),2*TABLEVIEW_FIX)];
     [self.image setContentMode:UIViewContentModeScaleToFill];
-    [self.image setImageURL:[NSURL URLWithString:@"http://connellydale.files.wordpress.com/2013/06/color-bars_large.jpg"]];
+    [self.image setImage:[UIImage imageNamed:@"Home"]];
+    [self.image setUserInteractionEnabled:NO];
     [scroll addSubview:self.image];
     [scroll setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
     [scroll setDelegate:self];
+    [scroll setScrollEnabled:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     
     self.eventTable=[[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.image.frame),CGRectGetWidth(self.view.frame),1000)];
@@ -76,7 +73,7 @@
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
         [query whereKey:@"category" equalTo:@"quiz"];
-        if ([self isConnectionAvailable])
+        if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -114,7 +111,7 @@
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
         [query whereKey:@"category" equalTo:@"quiz"];
-        if ([self isConnectionAvailable])
+        if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -144,7 +141,7 @@
     else if (self.segmentCategory.selectedSegmentIndex==1)
     {
         [query whereKey:@"category" equalTo:@"workshop"];
-        if ([self isConnectionAvailable])
+        if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -173,7 +170,7 @@
     else if (self.segmentCategory.selectedSegmentIndex==2)
     {
         [query whereKey:@"category" equalTo:@"lecture"];
-        if ([self isConnectionAvailable])
+        if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -293,7 +290,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    detailsView *view2=[[detailsView alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    [self.view addSubview:view2];
 }
 
 @end
