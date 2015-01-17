@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C4A0D078A18F6B9C4AD12E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C1AD85EF86CEE49F24D470 /* libPods.a */; };
+		7A26D6E51A6AE82E003168CA /* DIN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A26D6E41A6AE81C003168CA /* DIN.ttf */; };
 		7A6CFA921A6587840067E89D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CFA911A6587840067E89D /* EventCell.m */; };
 		7AE726511A69A00F0002A383 /* Arduino.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AE726501A69A00F0002A383 /* Arduino.png */; };
 		7AF1870D1A62EE980097ACED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870C1A62EE980097ACED /* main.m */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		23C1AD85EF86CEE49F24D470 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		250DAEB2A49F0A185DEB19EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7A26D6E41A6AE81C003168CA /* DIN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DIN.ttf; sourceTree = "<group>"; };
 		7A6CFA901A6587840067E89D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		7A6CFA911A6587840067E89D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
 		7AE726501A69A00F0002A383 /* Arduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arduino.png; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		7AF187091A62EE980097ACED /* tryst2015 */ = {
 			isa = PBXGroup;
 			children = (
+				7A26D6E41A6AE81C003168CA /* DIN.ttf */,
 				7AE726501A69A00F0002A383 /* Arduino.png */,
 				7AF187711A6423660097ACED /* Home.png */,
 				7AF187381A63DA1B0097ACED /* AsyncImageView */,
@@ -327,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A26D6E51A6AE82E003168CA /* DIN.ttf in Resources */,
 				7AF187191A62EE980097ACED /* Main.storyboard in Resources */,
 				7AE726511A69A00F0002A383 /* Arduino.png in Resources */,
 				7AF1871E1A62EE980097ACED /* LaunchScreen.xib in Resources */,
