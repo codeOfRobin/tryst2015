@@ -18,16 +18,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="08R-4S-Gkp" kind="relationship" relationship="viewControllers" id="LCw-jI-CNS"/>
+                        <segue destination="89B-Z4-QK4" kind="relationship" relationship="viewControllers" id="ZZs-Gn-xrb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="0AD-JA-GGo">
             <objects>
-                <viewController id="89B-Z4-QK4" sceneMemberID="viewController">
+                <viewController id="89B-Z4-QK4" customClass="mapsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7xA-KV-SOj"/>
                         <viewControllerLayoutGuide type="bottom" id="HlJ-ik-Tvp"/>
@@ -35,8 +36,39 @@
                     <view key="view" contentMode="scaleToFill" id="vn5-LV-0rv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3K-9N-dWV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="64" y="217" width="295" height="425"/>
+                                </variation>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WKN-Md-RAL">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="192" y="674" width="39" height="37"/>
+                                </variation>
+                            </pageControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="G3K-9N-dWV"/>
+                                <exclude reference="WKN-Md-RAL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="G3K-9N-dWV"/>
+                                <include reference="WKN-Md-RAL"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Try-Ao-YKk"/>
+                    <connections>
+                        <outlet property="pageControl" destination="WKN-Md-RAL" id="NHM-iq-0VP"/>
+                        <outlet property="scrollView" destination="G3K-9N-dWV" id="5MG-OL-n09"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quU-Bh-efW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

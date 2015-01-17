@@ -36,7 +36,7 @@
         self.mainView.layer.borderWidth = 2.0f;
         [self.mainView.layer setMasksToBounds:YES];
         
-        UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Arduino"]];
+        UIImageView *image=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"molecule"]];
         [image setFrame:CGRectMake(0, 0, CGRectGetWidth(self.mainView.frame), self.mainView.frame.size.height/3)];
         [image setClipsToBounds:YES];
         [image setContentMode:UIViewContentModeScaleAspectFill];
