@@ -21,11 +21,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.segmentCategory=[[UISegmentedControl alloc]initWithItems:@[@"QUIZZES",@"WORKSHOPS",@"LECTURES"]];
-    [self.segmentCategory setCenter:CGPointMake(self.navigationController.navigationBar.center.x, self.navigationController.navigationBar.frame.size.height/2)];
-    [self.navigationController.navigationBar addSubview:self.segmentCategory];
-    [self.segmentCategory addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventAllEvents];
-    self.segmentCategory.selectedSegmentIndex = 0;
+   
     
 
 }
@@ -42,6 +38,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.segmentCategory=[[UISegmentedControl alloc]initWithItems:@[@"EVENTS",@"WORKSHOPS",@"LECTURES"]];
+    [self.segmentCategory setCenter:CGPointMake(self.navigationController.navigationBar.center.x, self.navigationController.navigationBar.frame.size.height/2)];
+    [self.navigationController.navigationBar addSubview:self.segmentCategory];
+    [self.segmentCategory addTarget:self action:@selector(MySegmentControlAction:) forControlEvents: UIControlEventAllEvents];
+    self.segmentCategory.selectedSegmentIndex = 0; 
     self.navigationController.navigationBar.barStyle=UIBarStyleBlackTranslucent;
     self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     self.navigationController.navigationBar.translucent = YES;
@@ -59,7 +60,7 @@
     [scroll setScrollEnabled:NO];
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     
-    self.eventTable=[[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.image.frame),CGRectGetWidth(self.view.frame),1000)];
+    self.eventTable=[[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.image.frame),CGRectGetWidth(self.view.frame),self.view.frame.size.height-TABLEVIEW_FIX)];
     [self.eventTable registerClass:[EventCell class] forCellReuseIdentifier:@"cell"];
     self.eventTable.delegate=self;
     self.eventTable.dataSource=self;
@@ -72,7 +73,7 @@
     PFQuery *query=[PFQuery queryWithClassName:@"event"];
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
-        [query whereKey:@"category" equalTo:@"quiz"];
+        [query whereKey:@"category" equalTo:@"events"];
         if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];
@@ -110,7 +111,7 @@
     PFQuery *query=[PFQuery queryWithClassName:@"event"];
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
-        [query whereKey:@"category" equalTo:@"quiz"];
+        [query whereKey:@"category" equalTo:@"events"];
         if (![self isConnectionAvailable])
         {
             [query fromLocalDatastore];

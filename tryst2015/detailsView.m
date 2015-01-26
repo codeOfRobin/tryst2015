@@ -42,7 +42,7 @@
         [image setContentMode:UIViewContentModeScaleAspectFill];
         
         [self.mainView addSubview:image];
-        
+    
         
         UIBlurEffect *headingBlur=[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         UIVisualEffectView *headingBlurView=[[UIVisualEffectView alloc]initWithEffect:headingBlur];
