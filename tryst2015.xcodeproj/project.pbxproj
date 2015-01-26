@@ -16,6 +16,7 @@
 		7A64C4C81A6CC04400A758C5 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C41A6CC04400A758C5 /* photo3.png */; };
 		7A64C4C91A6CC04400A758C5 /* photo4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C51A6CC04400A758C5 /* photo4.png */; };
 		7A6CFA921A6587840067E89D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CFA911A6587840067E89D /* EventCell.m */; };
+		7AAC21661A76E5AB00CFAFCA /* scheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC21651A76E5AB00CFAFCA /* scheduleViewController.m */; };
 		7AF1870D1A62EE980097ACED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870C1A62EE980097ACED /* main.m */; };
 		7AF187101A62EE980097ACED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870F1A62EE980097ACED /* AppDelegate.m */; };
 		7AF187191A62EE980097ACED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF187171A62EE980097ACED /* Main.storyboard */; };
@@ -68,6 +69,8 @@
 		7A64C4C51A6CC04400A758C5 /* photo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo4.png; sourceTree = "<group>"; };
 		7A6CFA901A6587840067E89D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		7A6CFA911A6587840067E89D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		7AAC21641A76E5AB00CFAFCA /* scheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scheduleViewController.h; sourceTree = "<group>"; };
+		7AAC21651A76E5AB00CFAFCA /* scheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scheduleViewController.m; sourceTree = "<group>"; };
 		7AF187071A62EE980097ACED /* tryst2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryst2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF1870B1A62EE980097ACED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AF1870C1A62EE980097ACED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				7A26D71D1A6AF9A5003168CA /* mapsViewController.m */,
 				7AF187331A63D6840097ACED /* eventsViewController.h */,
 				7AF187341A63D6840097ACED /* eventsViewController.m */,
+				7AAC21641A76E5AB00CFAFCA /* scheduleViewController.h */,
+				7AAC21651A76E5AB00CFAFCA /* scheduleViewController.m */,
 				7AF9F3D81A65BE360003AF37 /* detailsView.h */,
 				7AF9F3D91A65BE360003AF37 /* detailsView.m */,
 				7A6CFA901A6587840067E89D /* EventCell.h */,
@@ -423,6 +428,7 @@
 				7AF1873B1A63DA1B0097ACED /* AsyncImageView.m in Sources */,
 				7A6CFA921A6587840067E89D /* EventCell.m in Sources */,
 				7AF9F3DA1A65BE360003AF37 /* detailsView.m in Sources */,
+				7AAC21661A76E5AB00CFAFCA /* scheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

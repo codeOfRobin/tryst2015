@@ -47,17 +47,13 @@
     self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     self.navigationController.navigationBar.translucent = YES;
     
-    scroll=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 1000)];
-    [self.view addSubview:scroll];
-    [scroll setBounces:YES];
     self.image=[[AsyncImageView alloc] initWithFrame:CGRectMake(0, -TABLEVIEW_FIX, CGRectGetWidth(self.view.frame),2*TABLEVIEW_FIX)];
     [self.image setContentMode:UIViewContentModeScaleToFill];
     [self.image setImage:[UIImage imageNamed:@"Home"]];
     [self.image setUserInteractionEnabled:NO];
-    [scroll addSubview:self.image];
-    [scroll setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
-    [scroll setDelegate:self];
-    [scroll setScrollEnabled:NO];
+    [self.view addSubview:self.image];
+    
+    
     [self.navigationController.navigationBar setBackgroundColor:[UIColor blackColor]];
     
     self.eventTable=[[UITableView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(self.image.frame),CGRectGetWidth(self.view.frame),self.view.frame.size.height-TABLEVIEW_FIX)];
