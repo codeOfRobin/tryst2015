@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface scheduleViewController : UIViewController
-
+#import <V8HorizontalPickerView.h>
+@interface scheduleViewController : UIViewController<V8HorizontalPickerViewDataSource,V8HorizontalPickerViewDelegate,V8HorizontalPickerElementState,UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) NSMutableArray *morningEvents;
+@property (nonatomic,strong) NSMutableArray *afternoonEvents;
+@property (nonatomic,strong) NSMutableArray *eveningEvents;
+@property (nonatomic,strong) UITableView *schedule;
 @end
