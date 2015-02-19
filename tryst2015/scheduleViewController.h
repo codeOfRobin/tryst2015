@@ -13,4 +13,5 @@
 @property (nonatomic,strong) NSMutableArray *afternoonEvents;
 @property (nonatomic,strong) NSMutableArray *eveningEvents;
 @property (nonatomic,strong) UITableView *schedule;
+@property (nonatomic) NSInteger selectedIndex;
 @end

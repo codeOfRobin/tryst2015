@@ -268,6 +268,7 @@
         cell.textLabel.text=[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
         
         NSString *x=[NSDateFormatter localizedStringFromDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        x=[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
         [cell.subtitleLabel setText:x];
     }
     
