@@ -241,7 +241,16 @@
 {
     return 100;
 }
-
+-(NSString *)getUTCFormateDate:(NSDate *)localDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    return dateString;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
@@ -254,21 +263,20 @@
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
         cell.textLabel.text=[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     else if (self.segmentCategory.selectedSegmentIndex==1)
     {
         cell.textLabel.text=[[self.workshopEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.workshopEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.workshopEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     else if (self.segmentCategory.selectedSegmentIndex==2)
     {
         cell.textLabel.text=[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
         
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
-        x=[NSDateFormatter localizedStringFromDate:[NSDate date] dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.lectureEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     

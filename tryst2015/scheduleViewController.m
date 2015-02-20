@@ -41,7 +41,7 @@
     [self.view addSubview:_picker];
 
     
-    self.schedule=[[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_picker.frame), self.view.frame.size.width, CGRectGetHeight(self.view.frame)-CGRectGetHeight(_picker.frame))];
+    self.schedule=[[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_picker.frame), self.view.frame.size.width, CGRectGetHeight(self.view.frame)-CGRectGetHeight(_picker.frame)-self.tabBarController.tabBar.frame.size.height)];
     [self.schedule setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.schedule setDataSource:self];
     [self.schedule setDelegate:self];
@@ -80,7 +80,16 @@
     }
 }
 
-
+-(NSString *)getUTCFormateDate:(NSDate *)localDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    return dateString;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
@@ -93,19 +102,19 @@
     if (indexPath.section==0)
     {
         cell.textLabel.text=[[self.morningEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.morningEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.morningEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     if (indexPath.section==1)
     {
         cell.textLabel.text=[[self.afternoonEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.morningEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.afternoonEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     if (indexPath.section==2)
     {
         cell.textLabel.text=[[self.eveningEvents objectAtIndex:indexPath.row] objectForKey:@"name"];
-        NSString *x=[NSDateFormatter localizedStringFromDate:[[self.morningEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
+        NSString *x=[self getUTCFormateDate:[[self.eveningEvents objectAtIndex:indexPath.row] objectForKey:@"startingTime"]];
         [cell.subtitleLabel setText:x];
     }
     [cell.cellImage setImage:[UIImage imageNamed:@"Home"]];
@@ -140,43 +149,27 @@
 
 -(UIView *)horizontalPickerView:(V8HorizontalPickerView *)picker viewForElementAtIndex:(NSInteger)index
 {
-    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 145, 100)];
-    UILabel *month=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 145, 26)];
-    [month setTextColor:[UIColor whiteColor]];
-    if (index<2)
+    UIImageView *view=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 145, 100)];
+    [view setContentMode:UIViewContentModeScaleAspectFit];
+    switch (index)
     {
-        [month setText:@"FEB"];
-    }
-    else
-    {
-        [month setText:@"MAR"];
-    }
-    
-    UILabel *day=[[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(month.frame), 145, 85)];
-    [month setFont:[UIFont fontWithName:@"DIN" size:30]];
-    [month setTextAlignment:NSTextAlignmentCenter];
-    [day setTextAlignment:NSTextAlignmentCenter];
-    switch (index) {
         case 0:
-            [day setText:@"27"];
+            [view setImage:[UIImage imageNamed:@"Feb27"]];
             break;
         case 1:
-            [day setText:@"28"];
+            [view setImage:[UIImage imageNamed:@"Feb28"]];
             break;
         case 2:
-            [day setText:@"1"];
+            [view setImage:[UIImage imageNamed:@"Mar01"]];
             break;
         case 3:
-            [day setText:@"2"];
+            [view setImage:[UIImage imageNamed:@"Mar02"]];
             break;
+        
             
         default:
             break;
     }
-    [day setTextColor:[UIColor whiteColor]];
-    [day setFont:[UIFont fontWithName:@"DIN" size:50]];
-    [view addSubview:month];
-    [view addSubview:day];
     return view;
 }
 
@@ -186,18 +179,22 @@
     if (section==0)
     {
         [label setText:@"MORNING"];
-        [label setTextColor:[UIColor greenColor]];
+        [label setTextColor:[UIColor colorWithRed:28.0/255 green:164.0/255 blue:226.0/255 alpha:1]];
+        [label setBackgroundColor:[UIColor colorWithRed:3.0/255 green:24.0/255 blue:33.0/255 alpha:1]];
     }
     else if (section==1)
     {
         [label setText:@"AFTERNOON"];
-        [label setTextColor:[UIColor blueColor]];
+        [label setTextColor:[UIColor colorWithRed:255.0/255 green:178.0/255 blue:85.0/255 alpha:1]];
+        [label setBackgroundColor:[UIColor colorWithRed:38.0/255 green:21.0/255 blue:4.0/255 alpha:1]];
     }
     else if (section==2)
     {
         [label setText:@"EVENING"];
-        [label setTextColor:[UIColor whiteColor]];
+        [label setTextColor:[UIColor redColor]];
+        [label setBackgroundColor:[UIColor colorWithRed:170.0/255 green:21.0/255 blue:4.0/255 alpha:0.3]];
     }
+    [label setFont:[UIFont fontWithName:@"DIN" size:18]];
     return label;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -213,8 +210,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:( NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute |NSCalendarUnitYear|NSCalendarUnitTimeZone) fromDate:now];
     [components setYear:2015];
-    [components setHour:0];
-    [components setMinute:0];
+    [components setHour:5];
+    [components setMinute:30];
     [components setSecond:1];
     [components setMonth:2];
     switch (self.selectedIndex)
@@ -227,17 +224,20 @@
             break;
         case 2:
             [components setDay:1];
+            [components setMonth:3];
+
             break;
         case 3:
             [components setDay:2];
+            [components setMonth:3];
             break;
         default:
             break;
     }
     NSDate *morningStart = [calendar dateFromComponents:components];
-    [components setHour:13];
+    [components setHour:18];
     NSDate *aftStart = [calendar dateFromComponents:components];
-    [components setHour:17];
+    [components setHour:23 ];
     NSDate *eveStart=[calendar dateFromComponents:components];
     [query whereKey:@"startingTime" greaterThan:morningStart];
     [query whereKey:@"startingTime" lessThan:aftStart];
@@ -259,16 +259,22 @@
     }];
     PFQuery *query2 = [PFQuery queryWithClassName:@"event"];
 
-    [query2 whereKey:@"startingTime" greaterThan:aftStart];
-    [query2 whereKey:@"startingTime" lessThan:eveStart];
+    [query2 whereKey:@"startingTime" greaterThan:eveStart];
+    [components setDay:components.day+1];
+    [components setHour:5];
+    [components setMinute:30];
+    NSDate *dateBeforeNextDay=[calendar dateFromComponents:components];
+    [query2 whereKey:@"startingTime" lessThan:dateBeforeNextDay];
     [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.eveningEvents=objects;
             [self.schedule reloadData];
+
         }
     }];
     
-    
+    [self.schedule reloadData];
+
 }
 /*
 #pragma mark - Navigation
