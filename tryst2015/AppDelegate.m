@@ -26,6 +26,7 @@
     // Override point for customization after application launch.
     [Parse enableLocalDatastore];
     // Initialize Parse.
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 
     [Parse setApplicationId:@"gXMF3SXAsbKMjgjSjzKRNK8djmuyIxoO2LPtlNyJ"
                   clientKey:@"zulRcOx80KDfiMNSCNnrfaA4Hp9HCScfq5OtD2Cc"];

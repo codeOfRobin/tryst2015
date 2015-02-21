@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -11,10 +11,13 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="08R-4S-Gkp" kind="relationship" relationship="viewControllers" id="LCw-jI-CNS"/>
@@ -45,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="1260" y="801"/>
         </scene>
-        <!--Item-->
+        <!--Maps-->
         <scene sceneID="0AD-JA-GGo">
             <objects>
                 <viewController id="89B-Z4-QK4" customClass="mapsViewController" sceneMemberID="viewController">
@@ -57,35 +60,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WKN-Md-RAL">
-                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="193" y="674" width="40" height="37"/>
-                                </variation>
-                            </pageControl>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3K-9N-dWV">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="639"/>
                                 </variation>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WKN-Md-RAL">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="180" y="555" width="40" height="37"/>
+                                </variation>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="WKN-Md-RAL"/>
                                 <exclude reference="G3K-9N-dWV"/>
+                                <exclude reference="WKN-Md-RAL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="WKN-Md-RAL"/>
                                 <include reference="G3K-9N-dWV"/>
+                                <include reference="WKN-Md-RAL"/>
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Try-Ao-YKk"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="maps.png" id="Try-Ao-YKk"/>
                     <connections>
                         <outlet property="pageControl" destination="WKN-Md-RAL" id="NHM-iq-0VP"/>
                         <outlet property="scrollView" destination="G3K-9N-dWV" id="5MG-OL-n09"/>
@@ -114,11 +117,11 @@
             </objects>
             <point key="canvasLocation" x="1896" y="-460.5"/>
         </scene>
-        <!--Item-->
+        <!--Events-->
         <scene sceneID="g2Y-M0-lPJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="08R-4S-Gkp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CLC-Su-QqI"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events.png" id="CLC-Su-QqI"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aBf-eR-2FJ">
@@ -134,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="978" y="-460.5"/>
         </scene>
-        <!--Item-->
+        <!--Schedule-->
         <scene sceneID="mpY-j0-DGc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JwT-cv-ZOc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ToJ-wp-obd"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule.png" id="ToJ-wp-obd"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GgR-rp-HCx">
@@ -155,4 +158,9 @@
             <point key="canvasLocation" x="342" y="801"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="events.png" width="44" height="44"/>
+        <image name="maps.png" width="44" height="44"/>
+        <image name="schedule.png" width="44" height="44"/>
+    </resources>
 </document>

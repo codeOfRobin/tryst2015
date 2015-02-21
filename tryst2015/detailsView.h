@@ -14,4 +14,6 @@
 @interface detailsView : UIView
 @property (nonatomic,strong) UIView *mainView;
 @property (nonatomic,strong) PFObject *data;
+- (id)initWithFrame:(CGRect)frame andData:(PFObject *)data;
+
 @end

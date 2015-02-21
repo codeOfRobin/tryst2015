@@ -18,9 +18,10 @@
 }
 */
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame andData:(PFObject *)data
 {
     self = [super initWithFrame:frame];
+    self.data=data;
     if (nil != self)
     {
         UIBlurEffect *blur=[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -51,7 +52,7 @@
         
         
         UILabel *heading=[[UILabel alloc]initWithFrame:CGRectMake(10, 0, CGRectGetWidth(headingBlurView.frame), CGRectGetHeight(headingBlurView.frame))];
-        [heading setText:@"BIZ QUIZ"];
+        [heading setText:[self.data objectForKey:@"name"]];
         [heading setFont:[UIFont fontWithName:@"DIN" size:30]];
         [headingBlurView addSubview:heading];
         [heading setTextColor:[UIColor whiteColor]];
@@ -123,6 +124,7 @@
 
 
 }
+
 
 
 -(void)buttonHandle:(id)sender

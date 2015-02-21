@@ -296,7 +296,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    detailsView *view2=[[detailsView alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    PFObject *data;
+    switch (self.segmentCategory.selectedSegmentIndex)
+    {
+        case 0:
+            data=[self.quizEvents objectAtIndex:indexPath.row];
+            break;
+        case 1:
+            data=[self.workshopEvents objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            data=[self.lectureEvents objectAtIndex:indexPath.row];
+            break;
+            
+        default:
+            break;
+    }
+    
+    detailsView *view2=[[detailsView alloc] initWithFrame:[[UIScreen mainScreen]bounds]andData:data];
+
+    
     [self.view addSubview:view2];
 }
 
