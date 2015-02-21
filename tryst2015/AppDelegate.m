@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "initialViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -61,6 +61,25 @@
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound
                                                                                                               categories:nil]];
+    }
+    
+    UIStoryboard * myStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BOOL ranBefore = [[NSUserDefaults standardUserDefaults] boolForKey:@"ranBefore"];
+    if (!ranBefore)
+    {
+        initialViewController * initialVC = [myStoryboard instantiateViewControllerWithIdentifier:@"InitialViewControllerIdentifier"];
+        [self.window setRootViewController:initialVC];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ranBefore"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    else
+    {
+        initialViewController * initialVC = [myStoryboard instantiateViewControllerWithIdentifier:@"InitialViewControllerIdentifier"];
+        [self.window setRootViewController:initialVC];
+
+//        UITabBarController * defaultViewController = [myStoryboard instantiateInitialViewController];
+//        [self.window setRootViewController:defaultViewController];
     }
     
     

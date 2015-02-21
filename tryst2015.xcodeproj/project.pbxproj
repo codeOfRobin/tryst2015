@@ -21,10 +21,17 @@
 		7A26D6E51A6AE82E003168CA /* DIN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A26D6E41A6AE81C003168CA /* DIN.ttf */; };
 		7A26D6F21A6AF225003168CA /* molecule.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26D6F11A6AF225003168CA /* molecule.png */; };
 		7A26D71E1A6AF9A5003168CA /* mapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A26D71D1A6AF9A5003168CA /* mapsViewController.m */; };
+		7A62F9911A9917D100939AC6 /* group0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9901A9917D100939AC6 /* group0.png */; };
+		7A62F9941A991AB500939AC6 /* selectedStartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9921A991AB500939AC6 /* selectedStartButton.png */; };
+		7A62F9951A991AB500939AC6 /* unselectedStartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9931A991AB500939AC6 /* unselectedStartButton.png */; };
 		7A64C4C61A6CC04400A758C5 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C21A6CC04400A758C5 /* photo1.png */; };
 		7A64C4C71A6CC04400A758C5 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C31A6CC04400A758C5 /* photo2.png */; };
 		7A64C4C81A6CC04400A758C5 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C41A6CC04400A758C5 /* photo3.png */; };
 		7A64C4C91A6CC04400A758C5 /* photo4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C51A6CC04400A758C5 /* photo4.png */; };
+		7A66B1A21A990B2E00B7B9D9 /* initialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A66B1A11A990B2E00B7B9D9 /* initialViewController.m */; };
+		7A66B1A71A9912F700B7B9D9 /* group3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B1A31A9912F700B7B9D9 /* group3.png */; };
+		7A66B1A81A9912F700B7B9D9 /* group1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B1A41A9912F700B7B9D9 /* group1.png */; };
+		7A66B1A91A9912F700B7B9D9 /* group2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A66B1A51A9912F700B7B9D9 /* group2.png */; };
 		7A6CFA921A6587840067E89D /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CFA911A6587840067E89D /* EventCell.m */; };
 		7AAC21661A76E5AB00CFAFCA /* scheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC21651A76E5AB00CFAFCA /* scheduleViewController.m */; };
 		7AF1870D1A62EE980097ACED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1870C1A62EE980097ACED /* main.m */; };
@@ -85,10 +92,18 @@
 		7A26D6F11A6AF225003168CA /* molecule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = molecule.png; sourceTree = "<group>"; };
 		7A26D71C1A6AF9A5003168CA /* mapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapsViewController.h; sourceTree = "<group>"; };
 		7A26D71D1A6AF9A5003168CA /* mapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapsViewController.m; sourceTree = "<group>"; };
+		7A62F9901A9917D100939AC6 /* group0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group0.png; sourceTree = "<group>"; };
+		7A62F9921A991AB500939AC6 /* selectedStartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedStartButton.png; sourceTree = "<group>"; };
+		7A62F9931A991AB500939AC6 /* unselectedStartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselectedStartButton.png; sourceTree = "<group>"; };
 		7A64C4C21A6CC04400A758C5 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
 		7A64C4C31A6CC04400A758C5 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
 		7A64C4C41A6CC04400A758C5 /* photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo3.png; sourceTree = "<group>"; };
 		7A64C4C51A6CC04400A758C5 /* photo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo4.png; sourceTree = "<group>"; };
+		7A66B1A01A990B2E00B7B9D9 /* initialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initialViewController.h; sourceTree = "<group>"; };
+		7A66B1A11A990B2E00B7B9D9 /* initialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initialViewController.m; sourceTree = "<group>"; };
+		7A66B1A31A9912F700B7B9D9 /* group3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group3.png; sourceTree = "<group>"; };
+		7A66B1A41A9912F700B7B9D9 /* group1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group1.png; sourceTree = "<group>"; };
+		7A66B1A51A9912F700B7B9D9 /* group2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group2.png; sourceTree = "<group>"; };
 		7A6CFA901A6587840067E89D /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
 		7A6CFA911A6587840067E89D /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
 		7AAC21641A76E5AB00CFAFCA /* scheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scheduleViewController.h; sourceTree = "<group>"; };
@@ -211,6 +226,12 @@
 		7A64C4C11A6CC04400A758C5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7A62F9921A991AB500939AC6 /* selectedStartButton.png */,
+				7A62F9931A991AB500939AC6 /* unselectedStartButton.png */,
+				7A66B1A31A9912F700B7B9D9 /* group3.png */,
+				7A66B1A41A9912F700B7B9D9 /* group1.png */,
+				7A66B1A51A9912F700B7B9D9 /* group2.png */,
+				7A62F9901A9917D100939AC6 /* group0.png */,
 				7A2003131A98A86B0011A4C2 /* Home.png */,
 				7AF900041A9791DF00DC1FEF /* Feb27.png */,
 				7AF900051A9791DF00DC1FEF /* Feb28.png */,
@@ -268,6 +289,8 @@
 				7AF1870E1A62EE980097ACED /* AppDelegate.h */,
 				7AF1870F1A62EE980097ACED /* AppDelegate.m */,
 				7AF187171A62EE980097ACED /* Main.storyboard */,
+				7A66B1A01A990B2E00B7B9D9 /* initialViewController.h */,
+				7A66B1A11A990B2E00B7B9D9 /* initialViewController.m */,
 				7A26D71C1A6AF9A5003168CA /* mapsViewController.h */,
 				7A26D71D1A6AF9A5003168CA /* mapsViewController.m */,
 				7AF187331A63D6840097ACED /* eventsViewController.h */,
@@ -422,7 +445,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A64C4C91A6CC04400A758C5 /* photo4.png in Resources */,
+				7A62F9941A991AB500939AC6 /* selectedStartButton.png in Resources */,
 				7A2003241A98C97F0011A4C2 /* maps_selected.png in Resources */,
+				7A66B1A91A9912F700B7B9D9 /* group2.png in Resources */,
 				7A2003161A98BFE30011A4C2 /* Mar02.png in Resources */,
 				7A64C4C81A6CC04400A758C5 /* photo3.png in Resources */,
 				7A2003221A98C97F0011A4C2 /* events_selected.png in Resources */,
@@ -435,15 +460,19 @@
 				7A2003251A98C97F0011A4C2 /* schedule_selected.png in Resources */,
 				7AF1871E1A62EE980097ACED /* LaunchScreen.xib in Resources */,
 				7A2003271A98C97F0011A4C2 /* favorites.png in Resources */,
+				7A66B1A81A9912F700B7B9D9 /* group1.png in Resources */,
 				7AF900091A9791DF00DC1FEF /* Mar01.png in Resources */,
 				7AF187371A63D87E0097ACED /* Podfile in Resources */,
 				7AF900081A9791DF00DC1FEF /* Feb28.png in Resources */,
 				7A26D6F21A6AF225003168CA /* molecule.png in Resources */,
+				7A66B1A71A9912F700B7B9D9 /* group3.png in Resources */,
+				7A62F9911A9917D100939AC6 /* group0.png in Resources */,
 				7A2003291A98C97F0011A4C2 /* schedule.png in Resources */,
 				7A2003231A98C97F0011A4C2 /* favorites_selected.png in Resources */,
 				7AF900071A9791DF00DC1FEF /* Feb27.png in Resources */,
 				7A2003281A98C97F0011A4C2 /* maps.png in Resources */,
 				7AF1871B1A62EE980097ACED /* Images.xcassets in Resources */,
+				7A62F9951A991AB500939AC6 /* unselectedStartButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +527,7 @@
 				7AF187101A62EE980097ACED /* AppDelegate.m in Sources */,
 				7AF187351A63D6840097ACED /* eventsViewController.m in Sources */,
 				7AF1870D1A62EE980097ACED /* main.m in Sources */,
+				7A66B1A21A990B2E00B7B9D9 /* initialViewController.m in Sources */,
 				7AF1873B1A63DA1B0097ACED /* AsyncImageView.m in Sources */,
 				7A6CFA921A6587840067E89D /* EventCell.m in Sources */,
 				7AF9F3DA1A65BE360003AF37 /* detailsView.m in Sources */,
