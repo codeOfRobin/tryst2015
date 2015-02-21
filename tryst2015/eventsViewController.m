@@ -254,12 +254,14 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"forIndexPath:indexPath];
+    
     if (cell==nil)
     {
         cell = [[EventCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
     [cell setNeedsLayout];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if (self.segmentCategory.selectedSegmentIndex==0)
     {
         cell.textLabel.text=[[self.quizEvents objectAtIndex:indexPath.row] objectForKey:@"name"];

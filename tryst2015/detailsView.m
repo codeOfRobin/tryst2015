@@ -17,7 +17,15 @@
     // Drawing code
 }
 */
-
+-(NSString *)getUTCFormateDate:(NSDate *)localDate
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    return dateString;
+}
 - (id)initWithFrame:(CGRect)frame andData:(PFObject *)data
 {
     self = [super initWithFrame:frame];
@@ -71,12 +79,14 @@
         
         UILabel *startTime=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(StartTimeHeading.frame),  self.mainView.frame.size.width/2, 30)];
         [startTime setTextColor:[UIColor whiteColor]];
-        [startTime setText:@"adkfjkasdf"];
+        NSString *x=[self getUTCFormateDate:[self.data objectForKey:@"startingTime"]];
+        [startTime setText:x];
         [self.mainView addSubview:startTime];
         
         UILabel *endTime=[[UILabel alloc]initWithFrame:CGRectMake( 10+self.mainView.frame.size.width/2, CGRectGetMaxY(StartTimeHeading.frame), self.mainView.frame.size.width/2, 30)];
         [endTime setTextColor:[UIColor whiteColor]];
-        [endTime setText:@"adkfjkasdf"];
+        x=[self getUTCFormateDate:[self.data objectForKey:@"endingTime"]];
+        [endTime setText:x];
         [self.mainView addSubview:endTime];
         
         UIView *border0=[[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(endTimeHeading.frame)-10, CGRectGetMaxY(image.frame), 1,70)];
@@ -95,7 +105,8 @@
         
         UILabel *venue=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(venueHeading.frame),CGRectGetWidth(self.mainView.frame), 30)];
         [venue setTextColor:[UIColor whiteColor]];
-        [venue setText:@"ghjkl"];
+        x=[self.data objectForKey:@"venue"];
+        [venue setText:x];
         [self.mainView addSubview:venue];
         
         UIView *border2=[[UIView alloc] initWithFrame:CGRectMake(0,CGRectGetMaxY(venue.frame), CGRectGetWidth(self.mainView.frame), 1)];
@@ -104,13 +115,17 @@
         
         UILabel *contactHeading=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(venue.frame), CGRectGetWidth(self.mainView.frame), 30)];
         [contactHeading setTextColor:[UIColor whiteColor]];
-        [contactHeading setText:@"CONTACT"];
+        [contactHeading setText:@"INFO"];
         [contactHeading setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:24]];
         [self.mainView addSubview:contactHeading];
         
-        UILabel *contact=[[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(contactHeading.frame), CGRectGetWidth(self.mainView.frame), 30)];
+        UITextView *contact=[[UITextView alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(contactHeading.frame), CGRectGetWidth(self.mainView.frame), CGRectGetHeight(self.mainView.frame)-CGRectGetMaxX(contactHeading.frame))];
+        [contact setBackgroundColor:[UIColor clearColor]];
+        contact.editable=NO;
         [contact setTextColor:[UIColor whiteColor]];
-        [contact setText:@"asdkcjnakscd"];
+        [contact setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16]];
+        NSString *aStr=[self.data objectForKey:@"otherInfo"];
+        contact.text = [aStr stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
         [self.mainView addSubview:contact];
         
 
