@@ -24,6 +24,9 @@
 		7A62F9911A9917D100939AC6 /* group0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9901A9917D100939AC6 /* group0.png */; };
 		7A62F9941A991AB500939AC6 /* selectedStartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9921A991AB500939AC6 /* selectedStartButton.png */; };
 		7A62F9951A991AB500939AC6 /* unselectedStartButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9931A991AB500939AC6 /* unselectedStartButton.png */; };
+		7A62F9991A991DFA00939AC6 /* event0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9961A991DFA00939AC6 /* event0.png */; };
+		7A62F99A1A991DFA00939AC6 /* event1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9971A991DFA00939AC6 /* event1.png */; };
+		7A62F99B1A991DFA00939AC6 /* event2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A62F9981A991DFA00939AC6 /* event2.png */; };
 		7A64C4C61A6CC04400A758C5 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C21A6CC04400A758C5 /* photo1.png */; };
 		7A64C4C71A6CC04400A758C5 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C31A6CC04400A758C5 /* photo2.png */; };
 		7A64C4C81A6CC04400A758C5 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A64C4C41A6CC04400A758C5 /* photo3.png */; };
@@ -95,6 +98,9 @@
 		7A62F9901A9917D100939AC6 /* group0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group0.png; sourceTree = "<group>"; };
 		7A62F9921A991AB500939AC6 /* selectedStartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedStartButton.png; sourceTree = "<group>"; };
 		7A62F9931A991AB500939AC6 /* unselectedStartButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselectedStartButton.png; sourceTree = "<group>"; };
+		7A62F9961A991DFA00939AC6 /* event0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event0.png; sourceTree = "<group>"; };
+		7A62F9971A991DFA00939AC6 /* event1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event1.png; sourceTree = "<group>"; };
+		7A62F9981A991DFA00939AC6 /* event2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event2.png; sourceTree = "<group>"; };
 		7A64C4C21A6CC04400A758C5 /* photo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo1.png; sourceTree = "<group>"; };
 		7A64C4C31A6CC04400A758C5 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
 		7A64C4C41A6CC04400A758C5 /* photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo3.png; sourceTree = "<group>"; };
@@ -226,6 +232,9 @@
 		7A64C4C11A6CC04400A758C5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7A62F9961A991DFA00939AC6 /* event0.png */,
+				7A62F9971A991DFA00939AC6 /* event1.png */,
+				7A62F9981A991DFA00939AC6 /* event2.png */,
 				7A62F9921A991AB500939AC6 /* selectedStartButton.png */,
 				7A62F9931A991AB500939AC6 /* unselectedStartButton.png */,
 				7A66B1A31A9912F700B7B9D9 /* group3.png */,
@@ -461,6 +470,7 @@
 				7AF1871E1A62EE980097ACED /* LaunchScreen.xib in Resources */,
 				7A2003271A98C97F0011A4C2 /* favorites.png in Resources */,
 				7A66B1A81A9912F700B7B9D9 /* group1.png in Resources */,
+				7A62F99B1A991DFA00939AC6 /* event2.png in Resources */,
 				7AF900091A9791DF00DC1FEF /* Mar01.png in Resources */,
 				7AF187371A63D87E0097ACED /* Podfile in Resources */,
 				7AF900081A9791DF00DC1FEF /* Feb28.png in Resources */,
@@ -468,7 +478,9 @@
 				7A66B1A71A9912F700B7B9D9 /* group3.png in Resources */,
 				7A62F9911A9917D100939AC6 /* group0.png in Resources */,
 				7A2003291A98C97F0011A4C2 /* schedule.png in Resources */,
+				7A62F99A1A991DFA00939AC6 /* event1.png in Resources */,
 				7A2003231A98C97F0011A4C2 /* favorites_selected.png in Resources */,
+				7A62F9991A991DFA00939AC6 /* event0.png in Resources */,
 				7AF900071A9791DF00DC1FEF /* Feb27.png in Resources */,
 				7A2003281A98C97F0011A4C2 /* maps.png in Resources */,
 				7AF1871B1A62EE980097ACED /* Images.xcassets in Resources */,

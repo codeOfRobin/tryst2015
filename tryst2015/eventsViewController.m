@@ -286,7 +286,23 @@
         NSLog(@"asdhjkfn");
         return TRUE;
     }]];
-    [cell.cellImage setImage:[UIImage imageNamed:@"Home"]];
+    
+    switch (self.segmentCategory.selectedSegmentIndex)
+    {
+        case 0:
+            [cell.cellImage setImage:[UIImage imageNamed:@"event0"]];
+            break;
+        case 1:
+            [cell.cellImage setImage:[UIImage imageNamed:@"event1"]];
+            break;
+        case 2:
+            [cell.cellImage setImage:[UIImage imageNamed:@"event2"]];
+            break;
+
+            
+        default:
+            break;
+    }
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     cell.leftExpansion.fillOnTrigger = YES;
     cell.leftSwipeSettings.transition = MGSwipeTransitionDrag;

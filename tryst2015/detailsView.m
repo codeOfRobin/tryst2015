@@ -50,6 +50,20 @@
         [image setClipsToBounds:YES];
         [image setContentMode:UIViewContentModeScaleAspectFill];
         
+        if ([[self.data objectForKey:@"category"] isEqualToString:@"event"])
+        {
+            [image setImage:[UIImage imageNamed:@"event0"]];
+        }
+        else if ([[self.data objectForKey:@"category"]isEqualToString:@"workshop"])
+        {
+            [image setImage:[UIImage imageNamed:@"event1"]];
+
+        }
+        else {
+            [image setImage:[UIImage imageNamed:@"event2"]];
+
+        }
+        
         [self.mainView addSubview:image];
     
         

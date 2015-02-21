@@ -75,11 +75,9 @@
     }
     else
     {
-        initialViewController * initialVC = [myStoryboard instantiateViewControllerWithIdentifier:@"InitialViewControllerIdentifier"];
-        [self.window setRootViewController:initialVC];
-
-//        UITabBarController * defaultViewController = [myStoryboard instantiateInitialViewController];
-//        [self.window setRootViewController:defaultViewController];
+        
+        UITabBarController * defaultViewController = [myStoryboard instantiateInitialViewController];
+        [self.window setRootViewController:defaultViewController];
     }
     
     
